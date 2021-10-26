@@ -12,13 +12,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
-
-import java.util.HashMap;
 
 public class loginactivity extends AppCompatActivity {
     FirebaseDatabase database;
@@ -37,9 +34,9 @@ public class loginactivity extends AppCompatActivity {
         Button login;
 
         log_reg = findViewById(R.id.log_to_reg);
-        email = findViewById(R.id.email);
-        pass = findViewById(R.id.password);
-        login = findViewById(R.id.login);
+        email = findViewById(R.id.email_id);
+        pass = findViewById(R.id.pdw);
+        login = findViewById(R.id.register);
 
         log_reg.setOnClickListener(new View.OnClickListener() {
             @Override

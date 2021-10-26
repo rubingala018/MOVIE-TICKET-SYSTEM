@@ -47,8 +47,7 @@ public class RegisterActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()){
-
-                            HashMap<String,Object> hash=new HashMap<>();
+                            /*HashMap<String,Object> hash=new HashMap<>();
                             hash.put("username",username.getText());
                             hash.put("email",email.getText());
                             hash.put("password",pdw.getText());
@@ -57,7 +56,7 @@ public class RegisterActivity extends AppCompatActivity {
                                 public void onSuccess(Void unused) {
 
                                 }
-                            });
+                            });*/
                         }
                         else {
 
