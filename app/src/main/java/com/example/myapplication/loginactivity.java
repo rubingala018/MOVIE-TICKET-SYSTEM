@@ -34,9 +34,9 @@ public class loginactivity extends AppCompatActivity {
         Button login;
 
         log_reg = findViewById(R.id.log_to_reg);
-        email = findViewById(R.id.email_id);
-        pass = findViewById(R.id.pdw);
-        login = findViewById(R.id.register);
+        email = findViewById(R.id.email);
+        pass = findViewById(R.id.pass);
+        login = findViewById(R.id.login);
 
         log_reg.setOnClickListener(new View.OnClickListener() {
             @Override
