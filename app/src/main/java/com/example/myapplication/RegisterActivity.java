@@ -30,7 +30,6 @@ public class RegisterActivity extends AppCompatActivity {
         auth= FirebaseAuth.getInstance();
         database=FirebaseDatabase.getInstance();
 
-
         setContentView(R.layout.activity_register);
         TextView reg_to_login;
         EditText username,email,pdw;
@@ -47,16 +46,16 @@ public class RegisterActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()){
-                            /*HashMap<String,Object> hash=new HashMap<>();
-                            hash.put("username",username.getText());
-                            hash.put("email",email.getText());
-                            hash.put("password",pdw.getText());
-                            database.getReference("user").child(auth.getCurrentUser().getUid()).setValue(hash).addOnSuccessListener(new OnSuccessListener<Void>() {
+                            HashMap<String,Object> hash=new HashMap<>();
+                            hash.put("username",username.getText().toString());
+                            hash.put("email",email.getText().toString());
+                            hash.put("password",pdw.getText().toString());
+                            database.getReference().child("User").child(auth.getCurrentUser().getUid()).updateChildren(hash).addOnSuccessListener(new OnSuccessListener<Void>() {
                                 @Override
                                 public void onSuccess(Void unused) {
 
                                 }
-                            });*/
+                            });
                         }
                         else {
 
