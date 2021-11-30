@@ -38,6 +38,10 @@ public class loginactivity extends AppCompatActivity {
         pass = findViewById(R.id.pass);
         login = findViewById(R.id.login);
 
+        if(auth.getCurrentUser()!=null){
+            startActivity(new Intent(loginactivity.this,HomePageActivity.class));
+        }
+
         log_reg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

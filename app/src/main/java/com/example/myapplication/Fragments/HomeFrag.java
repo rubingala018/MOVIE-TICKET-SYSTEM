@@ -1,10 +1,13 @@
 package com.example.myapplication.Fragments;
 
+import android.content.Context;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -31,8 +34,9 @@ import java.util.List;
 public class HomeFrag extends Fragment {
     String url;
     RequestQueue requestQueue;
-    List<Movies> movielist;
-    MoviesAdapter moviesAdapter;
+    private ArrayList<Movies> movielist;
+    private MoviesAdapter moviesAdapter;
+    Context context;
 
     FragmentHomeBinding binding;
 
@@ -59,17 +63,22 @@ public class HomeFrag extends Fragment {
             @Override
             public void onResponse(JSONObject response) {
                 try {
-                    JSONArray jsonArray = response.getJSONArray("results");
+                    JSONArray jsonArray=response.getJSONArray("results");
                     for (int i = 0; i < jsonArray.length(); i++) {
+                        String title="";
                         JSONObject obj = jsonArray.getJSONObject(i);
-                        String title = obj.getString("name");
-                        String lang = obj.getString("vicinity");
-                        String photo = obj.getString("vicinity");
-                        String rating = obj.getString("vicinity");
-
+                        if (obj.has("original_title")) {
+                            title = obj.getString("original_title");
+                        }
+                        //String lang = obj.getString("original_language");
+                        //String photo = obj.getString("poster_path");
+                        //String rating = obj.getString("vote_average");
+                        String lang="",photo="",rating="";
                         movielist.add(new Movies(title,lang,photo,rating));
                     }
-                    moviesAdapter = new MoviesAdapter(getContext(), movielist);
+                    LinearLayoutManager linearLayoutManager=new LinearLayoutManager(context);
+                    binding.movierecycler.setLayoutManager(linearLayoutManager);
+                    moviesAdapter = new MoviesAdapter(context, movielist);
                     binding.movierecycler.setAdapter(moviesAdapter);
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -78,7 +87,7 @@ public class HomeFrag extends Fragment {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-
+                Log.d("er", "Error" + error.getMessage());
             }
         }
         );

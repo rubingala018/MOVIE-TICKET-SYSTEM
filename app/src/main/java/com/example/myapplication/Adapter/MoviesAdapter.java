@@ -14,21 +14,22 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.myapplication.Models.Movies;
 import com.example.myapplication.R;
 
-import java.util.List;
+import java.util.ArrayList;
 
 public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.vieholder> {
     Context context;
-    List<Movies> moviesList;
+    ArrayList<Movies> moviesList;
 
-    public MoviesAdapter(Context context,List<Movies> moviesList){
-        this.context=context;
-        this.moviesList=moviesList;
+    public MoviesAdapter(Context context, ArrayList<Movies> moviesList) {
+        super();
+        this.context = context;
+        this.moviesList = moviesList;
     }
 
     @NonNull
     @Override
     public MoviesAdapter.vieholder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-         View itemsView = LayoutInflater
+        View itemsView = LayoutInflater
                 .from(parent.getContext())
                 .inflate(R.layout.movies, parent, false);
 
@@ -37,6 +38,8 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.vieholder>
 
     @Override
     public void onBindViewHolder(@NonNull MoviesAdapter.vieholder holder, int position) {
+        Movies movies = moviesList.get(position);
+       // holder.title.setText(movies.getTitle());
 
     }
 
@@ -49,11 +52,10 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.vieholder>
         ImageView picture;
         TextView title;
 
-        public vieholder(@NonNull View itemView)
-        {
+        public vieholder(@NonNull View itemView) {
             super(itemView);
-            picture= itemView.findViewById(R.id.movie_photo);
-            title= itemView.findViewById(R.id.title_id);
+            picture = itemView.findViewById(R.id.movie_photo);
+            title = itemView.findViewById(R.id.title_id);
 
         }
     }

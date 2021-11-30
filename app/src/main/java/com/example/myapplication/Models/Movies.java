@@ -10,6 +10,9 @@ public class Movies {
         this.rating=rating;
     }
 
+    public Movies(){
+    }
+
     public String getTitle() {
         return title;
     }
