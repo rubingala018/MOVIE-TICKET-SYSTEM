@@ -65,15 +65,19 @@ public class HomeFrag extends Fragment {
                 try {
                     JSONArray jsonArray=response.getJSONArray("results");
                     for (int i = 0; i < jsonArray.length(); i++) {
-                        String title="";
+                        String title="",photo="";
                         JSONObject obj = jsonArray.getJSONObject(i);
-                        if (obj.has("original_title")) {
+                        if (obj.has("title")) {
+                            title = obj.getString("title");
+                        }
+                        else if(obj.has("original_title")){
                             title = obj.getString("original_title");
                         }
-                        //String lang = obj.getString("original_language");
-                        //String photo = obj.getString("poster_path");
-                        //String rating = obj.getString("vote_average");
-                        String lang="",photo="",rating="";
+
+                        if (obj.has("poster_path")) {
+                            photo = obj.getString("poster_path");
+                        }
+                        String lang="",rating="";
                         movielist.add(new Movies(title,lang,photo,rating));
                     }
                     LinearLayoutManager linearLayoutManager=new LinearLayoutManager(context);

@@ -7,10 +7,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.example.myapplication.Models.Movies;
 import com.example.myapplication.R;
 
@@ -39,7 +41,13 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.vieholder>
     @Override
     public void onBindViewHolder(@NonNull MoviesAdapter.vieholder holder, int position) {
         Movies movies = moviesList.get(position);
-       // holder.title.setText(movies.getTitle());
+        holder.title.setText(movies.getTitle());
+       /* if(movies.getPhoto()!=null) {
+            Glide.with(context).load(movies.getPhoto()).into(holder.picture);
+        }
+        else {
+            Glide.with(context).load(R.drawable.common_full_open_on_phone).into(holder.picture);
+        }*/
 
     }
 
