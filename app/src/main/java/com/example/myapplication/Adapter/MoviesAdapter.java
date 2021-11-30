@@ -2,13 +2,17 @@ package com.example.myapplication.Adapter;
 
 import android.content.Context;
 import android.graphics.Movie;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.myapplication.Models.Movies;
+import com.example.myapplication.R;
 
 import java.util.List;
 
@@ -24,7 +28,11 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.vieholder>
     @NonNull
     @Override
     public MoviesAdapter.vieholder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return null;
+         View itemsView = LayoutInflater
+                .from(parent.getContext())
+                .inflate(R.layout.movies, parent, false);
+
+        return new vieholder(itemsView);
     }
 
     @Override
@@ -38,8 +46,15 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.vieholder>
     }
 
     public class vieholder extends RecyclerView.ViewHolder {
-        public vieholder(@NonNull View itemView) {
+        ImageView picture;
+        TextView title;
+
+        public vieholder(@NonNull View itemView)
+        {
             super(itemView);
+            picture= itemView.findViewById(R.id.movie_photo);
+            title= itemView.findViewById(R.id.title_id);
+
         }
     }
 }
