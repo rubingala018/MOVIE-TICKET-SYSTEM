@@ -4,6 +4,7 @@ import android.content.Context;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -11,6 +12,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -73,16 +75,17 @@ public class HomeFrag extends Fragment {
                         else if(obj.has("original_title")){
                             title = obj.getString("original_title");
                         }
-
                         if (obj.has("poster_path")) {
-                            photo = obj.getString("poster_path");
+                            photo="https://image.tmdb.org/t/p/original"+obj.getString("poster_path");
+                        }
+                        else {
+                            photo=null;
                         }
                         String lang="",rating="";
                         movielist.add(new Movies(title,lang,photo,rating));
                     }
-                    LinearLayoutManager linearLayoutManager=new LinearLayoutManager(context);
-                    binding.movierecycler.setLayoutManager(linearLayoutManager);
                     moviesAdapter = new MoviesAdapter(context, movielist);
+                    binding.movierecycler.setLayoutManager(new GridLayoutManager(getContext(),2));
                     binding.movierecycler.setAdapter(moviesAdapter);
                 } catch (JSONException e) {
                     e.printStackTrace();
