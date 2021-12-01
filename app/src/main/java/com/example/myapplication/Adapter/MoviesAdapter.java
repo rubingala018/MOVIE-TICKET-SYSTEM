@@ -57,7 +57,13 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.viewholder
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(con, MoviesDescActivity.class);
-                intent.putExtra("title",movies.getTitle())
+                intent.putExtra("title",movies.getTitle());
+                intent.putExtra("photo",movies.getPhoto());
+                intent.putExtra("rating",movies.getRating());
+                intent.putExtra("lang",movies.getLang());
+                intent.putExtra("release_date",movies.getRelease_date());
+                intent.putExtra("overview",movies.getOverview());
+                con.startActivity(intent);
             }
         });
 

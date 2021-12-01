@@ -67,7 +67,7 @@ public class HomeFrag extends Fragment {
                 try {
                     JSONArray jsonArray=response.getJSONArray("results");
                     for (int i = 0; i < jsonArray.length(); i++) {
-                        String title="",photo="",lang="",rating="";;
+                        String title="",photo="",lang="",rating="",release_date="",overview="";
                         JSONObject obj = jsonArray.getJSONObject(i);
                         if (obj.has("title")) {
                             title = obj.getString("title");
@@ -87,7 +87,17 @@ public class HomeFrag extends Fragment {
                         else {
                             rating = "N/A";
                         }
-                        movielist.add(new Movies(title,lang,photo,rating));
+                        if(obj.has("release_date")) {
+                            release_date = obj.getString("release_date");
+                        }
+                        if(obj.has("original_language")){
+                            lang=obj.getString("original_language");
+                        }
+                        if(obj.has("overview")){
+                            overview=obj.getString("overview");
+                        }
+
+                        movielist.add(new Movies(title,lang,photo,rating,release_date,overview));
                     }
                     moviesAdapter = new MoviesAdapter(context, movielist);
                     binding.movierecycler.setLayoutManager(new GridLayoutManager(getContext(),2));
