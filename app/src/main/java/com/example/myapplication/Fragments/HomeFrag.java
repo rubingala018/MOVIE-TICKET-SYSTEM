@@ -67,7 +67,7 @@ public class HomeFrag extends Fragment {
                 try {
                     JSONArray jsonArray=response.getJSONArray("results");
                     for (int i = 0; i < jsonArray.length(); i++) {
-                        String title="",photo="";
+                        String title="",photo="",lang="",rating="";;
                         JSONObject obj = jsonArray.getJSONObject(i);
                         if (obj.has("title")) {
                             title = obj.getString("title");
@@ -81,7 +81,12 @@ public class HomeFrag extends Fragment {
                         else {
                             photo=null;
                         }
-                        String lang="",rating="";
+                        if (obj.has("vote_average")) {
+                            rating = obj.getString("vote_average");
+                        }
+                        else {
+                            rating = "N/A";
+                        }
                         movielist.add(new Movies(title,lang,photo,rating));
                     }
                     moviesAdapter = new MoviesAdapter(context, movielist);

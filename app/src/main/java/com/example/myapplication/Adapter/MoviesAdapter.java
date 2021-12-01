@@ -49,6 +49,7 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.viewholder
         Movies movies = moviesList.get(position);
         holder.title.setText(movies.getTitle());
         Glide.with(con).load(movies.getPhoto()).into(holder.picture);
+        holder.rating.setText(movies.getRating());
 
 
         DisplayMetrics lDisplayMetrics = con.getResources().getDisplayMetrics();
@@ -67,7 +68,7 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.viewholder
 
     public class viewholder extends RecyclerView.ViewHolder {
         ImageView picture;
-        TextView title;
+        TextView title,rating;
         CardView cardView;
 
         public viewholder(@NonNull View itemView) {
@@ -75,6 +76,7 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.viewholder
             picture = itemView.findViewById(R.id.movie_photo);
             title = itemView.findViewById(R.id.title_id);
             cardView=itemView.findViewById(R.id.card);
+            rating=itemView.findViewById(R.id.ratings);
 
         }
     }
