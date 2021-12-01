@@ -33,21 +33,21 @@ public class MoviesDescActivity extends AppCompatActivity {
         overview=getIntent().getStringExtra("overview");
         
 
-        /*title_txt=findViewById(R.id.);
-        photo=findViewById(R.id.);
-        rating_txt=findViewById(R.id.);
-        lang_txt=findViewById(R.id.);
-        release_date_txt=findViewById(R.id.);
-        overview_txt=findViewById(R.id.);
-        book_tkt=findViewById(R.id.);*/
+        title_txt=findViewById(R.id.movie_title);
+        photo=findViewById(R.id.photo_url);
+        rating_txt=findViewById(R.id.rating);
+        lang_txt=findViewById(R.id.language);
+        release_date_txt=findViewById(R.id.release_date);
+        overview_txt=findViewById(R.id.desc);
+        book_tkt=findViewById(R.id.book_tickets);
 
-        /*title_txt.setText(title);
+        title_txt.setText(title);
         rating_txt.setText(rating);
         lang_txt.setText(lang);
         release_date_txt.setText(release_date);
-        overview_txt.setText(overview);*/
+        overview_txt.setText(overview);
 
-       /* Glide.with(MoviesDescActivity.this).load(photo_url).into(photo);
+        Glide.with(MoviesDescActivity.this).load(photo_url).into(photo);
 
         book_tkt.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,6 +61,6 @@ public class MoviesDescActivity extends AppCompatActivity {
                 intent.putExtra("overview",overview);
                 startActivity(intent);
             }
-        });*/
+        });
     }
 }
