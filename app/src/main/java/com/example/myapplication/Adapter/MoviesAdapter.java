@@ -1,6 +1,7 @@
 package com.example.myapplication.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Movie;
 import android.util.DisplayMetrics;
 import android.view.Display;
@@ -20,6 +21,7 @@ import com.bumptech.glide.Glide;
 import com.example.myapplication.Fragments.HomeFrag;
 import com.example.myapplication.HomePageActivity;
 import com.example.myapplication.Models.Movies;
+import com.example.myapplication.MoviesDescActivity;
 import com.example.myapplication.R;
 
 import java.util.ArrayList;
@@ -50,6 +52,14 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.viewholder
         holder.title.setText(movies.getTitle());
         Glide.with(con).load(movies.getPhoto()).into(holder.picture);
         holder.rating.setText(movies.getRating());
+
+        holder.cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(con, MoviesDescActivity.class);
+                intent.putExtra("title",movies.getTitle())
+            }
+        });
 
 
         DisplayMetrics lDisplayMetrics = con.getResources().getDisplayMetrics();
