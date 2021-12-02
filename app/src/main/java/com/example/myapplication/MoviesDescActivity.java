@@ -53,11 +53,6 @@ public class MoviesDescActivity extends AppCompatActivity {
 
         Glide.with(MoviesDescActivity.this).load(photo_url).into(photo);
 
-        /*DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
-        Calendar c = Calendar.getInstance();
-        c.add(Calendar.DATE, 1);
-        Toast.makeText(MoviesDescActivity.this, dateFormat.format(c.getTime()), Toast.LENGTH_SHORT).show();*/
-
         book_tkt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
