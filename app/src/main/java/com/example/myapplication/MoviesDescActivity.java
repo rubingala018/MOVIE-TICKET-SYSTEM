@@ -12,6 +12,10 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+
 public class MoviesDescActivity extends AppCompatActivity {
     String title,photo_url,rating,lang,release_date,overview;
     TextView title_txt,rating_txt,lang_txt,release_date_txt,overview_txt;
@@ -48,6 +52,11 @@ public class MoviesDescActivity extends AppCompatActivity {
         overview_txt.setText(overview);
 
         Glide.with(MoviesDescActivity.this).load(photo_url).into(photo);
+
+        /*DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        Calendar c = Calendar.getInstance();
+        c.add(Calendar.DATE, 1);
+        Toast.makeText(MoviesDescActivity.this, dateFormat.format(c.getTime()), Toast.LENGTH_SHORT).show();*/
 
         book_tkt.setOnClickListener(new View.OnClickListener() {
             @Override
