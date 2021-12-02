@@ -3,7 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Asus/AndroidStudioProjects/MOVIE-TICKET-SYSTEM/app/src/main/res/layout/activity_main.xml" value="0.12760416666666666" />
+        <entry key="..\:/Users/Asus/AndroidStudioProjects/MOVIE-TICKET-SYSTEM/app/src/main/res/layout/activity_home_page.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Asus/AndroidStudioProjects/MOVIE-TICKET-SYSTEM/app/src/main/res/layout/activity_loginactivity.xml" value="0.24456521739130435" />
+        <entry key="..\:/Users/Asus/AndroidStudioProjects/MOVIE-TICKET-SYSTEM/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/Users/Asus/AndroidStudioProjects/MOVIE-TICKET-SYSTEM/app/src/main/res/layout/activity_movies_desc.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Asus/AndroidStudioProjects/MOVIE-TICKET-SYSTEM/app/src/main/res/layout/activity_register.xml" value="0.264" />
         <entry key="..\:/Users/Rubin Gala/AndroidStudioProjects/MyApplication/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Users/Rubin Gala/AndroidStudioProjects/MyApplication/app/src/main/res/layout/fragment_blank.xml" value="0.1" />
