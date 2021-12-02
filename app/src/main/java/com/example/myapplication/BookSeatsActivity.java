@@ -32,27 +32,27 @@ public class BookSeatsActivity extends AppCompatActivity {
         overview=getIntent().getStringExtra("overview");
 
         getSupportActionBar().hide();
-        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        DateFormat dateFormat = new SimpleDateFormat("dd");
         Calendar c = Calendar.getInstance();
-        c.add(Calendar.DATE, 1);
+        c.add(Calendar.DATE, 0);
 
         Calendar c1 = Calendar.getInstance();
-        c1.add(Calendar.DATE, 2);
+        c1.add(Calendar.DATE, 1);
 
         Calendar c2 = Calendar.getInstance();
-        c2.add(Calendar.DATE, 3);
+        c2.add(Calendar.DATE, 2);
 
         Calendar c3 = Calendar.getInstance();
-        c3.add(Calendar.DATE, 4);
+        c3.add(Calendar.DATE, 3);
 
         Calendar c4 = Calendar.getInstance();
-        c4.add(Calendar.DATE, 5);
+        c4.add(Calendar.DATE, 4);
 
         Calendar c5 = Calendar.getInstance();
-        c5.add(Calendar.DATE, 6);
+        c5.add(Calendar.DATE, 5);
 
         Calendar c6 = Calendar.getInstance();
-        c6.add(Calendar.DATE, 7);
+        c6.add(Calendar.DATE, 6);
 
         date1=findViewById(R.id.d1);
         date2=findViewById(R.id.d2);
