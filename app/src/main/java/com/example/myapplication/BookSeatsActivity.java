@@ -70,7 +70,7 @@ public class BookSeatsActivity extends AppCompatActivity {
         time6=findViewById(R.id.t6);
         time7=findViewById(R.id.t7);
 
-        movietitle.setText(title);
+        //movietitle.setText(title);
         date1.setText(dateFormat.format(c.getTime()));
         date2.setText(dateFormat.format(c1.getTime()));
         date3.setText(dateFormat.format(c2.getTime()));
