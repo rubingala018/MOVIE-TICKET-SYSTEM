@@ -18,7 +18,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/textView6"
+            android:id="@+id/movie_title1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -73,6 +73,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:gravity="center"
             android:orientation="vertical">
 
             <TextView
@@ -87,6 +88,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:gravity="center"
             android:orientation="vertical">
 
             <TextView
@@ -101,6 +103,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:gravity="center"
             android:orientation="vertical">
 
             <TextView
@@ -115,6 +118,7 @@
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_weight="1"
+            android:gravity="center"
             android:orientation="vertical">
 
             <TextView
@@ -129,6 +133,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:gravity="center"
             android:orientation="vertical">
 
             <TextView
@@ -177,6 +182,7 @@
                     android:orientation="horizontal">
 
                     <TextView
+                        android:id="@+id/t1"
                         android:layout_width="wrap_content"
                         android:layout_height="35dp"
                         android:layout_margin="5dp"
@@ -186,6 +192,7 @@
                         android:textColor="#7CB342" />
 
                     <TextView
+                        android:id="@+id/t2"
                         android:layout_width="wrap_content"
                         android:layout_height="35dp"
                         android:layout_margin="5dp"
@@ -221,7 +228,7 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:id="@+id/textView18"
+                        android:id="@+id/t3"
                         android:layout_width="wrap_content"
                         android:layout_height="35dp"
                         android:layout_margin="5dp"
@@ -231,6 +238,7 @@
                         android:textColor="#7CB342" />
 
                     <TextView
+                        android:id="@+id/t4"
                         android:layout_width="wrap_content"
                         android:layout_height="35dp"
                         android:layout_margin="5dp"
@@ -240,6 +248,7 @@
                         android:textColor="#7CB342" />
 
                     <TextView
+                        android:id="@+id/t5"
                         android:layout_width="wrap_content"
                         android:layout_height="35dp"
                         android:layout_margin="5dp"
@@ -275,6 +284,7 @@
                     android:orientation="horizontal">
 
                     <TextView
+                        android:id="@+id/t6"
                         android:layout_width="wrap_content"
                         android:layout_height="35dp"
                         android:layout_margin="5dp"
@@ -284,6 +294,7 @@
                         android:textColor="#7CB342" />
 
                     <TextView
+                        android:id="@+id/t7"
                         android:layout_width="wrap_content"
                         android:layout_height="35dp"
                         android:layout_margin="5dp"
