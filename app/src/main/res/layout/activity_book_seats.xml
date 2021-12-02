@@ -39,9 +39,11 @@
         app:layout_constraintTop_toBottomOf="@+id/linearLayout5">
 
         <LinearLayout
+            android:id="@+id/d1"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:gravity="center"
             android:orientation="vertical">
 
             <TextView
@@ -56,10 +58,11 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:gravity="center"
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/textView8"
+                android:id="@+id/d2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="5dp"
@@ -73,7 +76,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/textView9"
+                android:id="@+id/d3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="5dp"
@@ -87,7 +90,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/textView11"
+                android:id="@+id/d4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="5dp"
@@ -101,7 +104,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/textView12"
+                android:id="@+id/d5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="5dp"
@@ -115,7 +118,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/textView13"
+                android:id="@+id/d6"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="5dp"
@@ -129,7 +132,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/textView14"
+                android:id="@+id/d7"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="5dp"

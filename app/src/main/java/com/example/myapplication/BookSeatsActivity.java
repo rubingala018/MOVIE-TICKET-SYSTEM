@@ -47,7 +47,5 @@ public class BookSeatsActivity extends AppCompatActivity {
         Calendar c6 = Calendar.getInstance();
         c6.add(Calendar.DATE, 7);
 
-
-
     }
 }
