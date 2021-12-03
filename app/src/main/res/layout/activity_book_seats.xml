@@ -30,7 +30,7 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/linearLayout6"
+        android:id="@+id/datelInear"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -48,9 +48,12 @@
             <TextView
                 android:id="@+id/d1"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
+                android:background="#C0CA33"
+                android:gravity="center"
                 android:padding="5dp"
-                android:text="TextView" />
+                android:text="TextView"
+                android:textColor="#FFFFFF" />
         </LinearLayout>
 
         <LinearLayout
@@ -63,9 +66,11 @@
             <TextView
                 android:id="@+id/d2"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
                 android:padding="5dp"
-                android:text="TextView" />
+                android:text="TextView"
+                android:textColor="#000000" />
         </LinearLayout>
 
         <LinearLayout
@@ -78,9 +83,11 @@
             <TextView
                 android:id="@+id/d3"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
                 android:padding="5dp"
-                android:text="TextView" />
+                android:text="TextView"
+                android:textColor="#000000" />
         </LinearLayout>
 
         <LinearLayout
@@ -93,9 +100,11 @@
             <TextView
                 android:id="@+id/d4"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
                 android:padding="5dp"
-                android:text="TextView" />
+                android:text="TextView"
+                android:textColor="#000000" />
         </LinearLayout>
 
         <LinearLayout
@@ -108,9 +117,11 @@
             <TextView
                 android:id="@+id/d5"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
                 android:padding="5dp"
-                android:text="TextView" />
+                android:text="TextView"
+                android:textColor="#000000" />
         </LinearLayout>
 
         <LinearLayout
@@ -123,9 +134,11 @@
             <TextView
                 android:id="@+id/d6"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
                 android:padding="5dp"
-                android:text="TextView" />
+                android:text="TextView"
+                android:textColor="#000000" />
         </LinearLayout>
 
         <LinearLayout
@@ -138,9 +151,11 @@
             <TextView
                 android:id="@+id/d7"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
                 android:padding="5dp"
-                android:text="TextView" />
+                android:text="TextView"
+                android:textColor="#000000" />
         </LinearLayout>
     </LinearLayout>
 
@@ -150,7 +165,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout6">
+        app:layout_constraintTop_toBottomOf="@+id/datelInear">
 
         <LinearLayout
             android:layout_width="match_parent"
