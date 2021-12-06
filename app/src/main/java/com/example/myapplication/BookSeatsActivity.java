@@ -19,7 +19,7 @@ public class BookSeatsActivity extends AppCompatActivity {
     String title, photo_url, rating, lang, release_date, overview;
     TextView date1, date2, date3, date4, date5, date6, date7;
     TextView time1, time2, time3, time4, time5, time6, time7;
-    String theatre;
+    String fdate;
     TextView movietitle;
 
     @Override
@@ -94,6 +94,7 @@ public class BookSeatsActivity extends AppCompatActivity {
             public void onClick(View view) {
                 NotSelected();
                 currentSelected(date1.getId());
+                fdate=date1.getText().toString();
             }
         });
         date2.setOnClickListener(new View.OnClickListener() {
@@ -101,6 +102,7 @@ public class BookSeatsActivity extends AppCompatActivity {
             public void onClick(View view) {
                 NotSelected();
                 currentSelected(date2.getId());
+                fdate=date2.getText().toString();
             }
         });
         date3.setOnClickListener(new View.OnClickListener() {
@@ -108,6 +110,7 @@ public class BookSeatsActivity extends AppCompatActivity {
             public void onClick(View view) {
                 NotSelected();
                 currentSelected(date3.getId());
+                fdate=date3.getText().toString();
             }
         });
         date4.setOnClickListener(new View.OnClickListener() {
@@ -115,6 +118,7 @@ public class BookSeatsActivity extends AppCompatActivity {
             public void onClick(View view) {
                 NotSelected();
                 currentSelected(date4.getId());
+                fdate=date4.getText().toString();
             }
         });
         date5.setOnClickListener(new View.OnClickListener() {
@@ -122,6 +126,7 @@ public class BookSeatsActivity extends AppCompatActivity {
             public void onClick(View view) {
                 NotSelected();
                 currentSelected(date5.getId());
+                fdate=date5.getText().toString();
             }
         });
         date6.setOnClickListener(new View.OnClickListener() {
@@ -129,6 +134,7 @@ public class BookSeatsActivity extends AppCompatActivity {
             public void onClick(View view) {
                 NotSelected();
                 currentSelected(date6.getId());
+                fdate=date6.getText().toString();
             }
         });
         date7.setOnClickListener(new View.OnClickListener() {
@@ -136,6 +142,7 @@ public class BookSeatsActivity extends AppCompatActivity {
             public void onClick(View view) {
                 NotSelected();
                 currentSelected(date7.getId());
+                fdate=date7.getText().toString();
             }
         });
 
@@ -143,8 +150,76 @@ public class BookSeatsActivity extends AppCompatActivity {
         time1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(BookSeatsActivity.this, MainActivity.class);
+                Intent intent = new Intent(BookSeatsActivity.this, SeatsActivity.class);
                 intent.putExtra("Theatre", "Theatre 1");
+                intent.putExtra("time",time1.getText());
+                intent.putExtra("date",fdate);
+                intent.putExtra("title", title);
+                startActivity(intent);
+            }
+        });
+        time2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(BookSeatsActivity.this, SeatsActivity.class);
+                intent.putExtra("Theatre", "Theatre 1");
+                intent.putExtra("time",time2.getText());
+                intent.putExtra("date",fdate);
+                intent.putExtra("title", title);
+                startActivity(intent);
+            }
+        });
+        time3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(BookSeatsActivity.this, SeatsActivity.class);
+                intent.putExtra("Theatre", "Theatre 2");
+                intent.putExtra("time",time3.getText());
+                intent.putExtra("date",fdate);
+                intent.putExtra("title", title);
+                startActivity(intent);
+            }
+        });
+        time4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(BookSeatsActivity.this, SeatsActivity.class);
+                intent.putExtra("Theatre", "Theatre 2");
+                intent.putExtra("time",time4.getText());
+                intent.putExtra("date",fdate);
+                intent.putExtra("title", title);
+                startActivity(intent);
+            }
+        });
+        time5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(BookSeatsActivity.this, SeatsActivity.class);
+                intent.putExtra("Theatre", "Theatre 2");
+                intent.putExtra("time",time5.getText());
+                intent.putExtra("date",fdate);
+                intent.putExtra("title", title);
+                startActivity(intent);
+            }
+        });
+        time6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(BookSeatsActivity.this, SeatsActivity.class);
+                intent.putExtra("Theatre", "Theatre 3");
+                intent.putExtra("time",time6.getText());
+                intent.putExtra("date",fdate);
+                intent.putExtra("title", title);
+                startActivity(intent);
+            }
+        });
+        time7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(BookSeatsActivity.this, SeatsActivity.class);
+                intent.putExtra("Theatre", "Theatre 3");
+                intent.putExtra("time",time7.getText());
+                intent.putExtra("date",fdate);
                 intent.putExtra("title", title);
                 startActivity(intent);
             }
