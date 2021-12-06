@@ -61,6 +61,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:background="@drawable/available"
                 android:gravity="center"
                 android:text="V1" />
         </LinearLayout>
@@ -75,6 +76,7 @@
                 android:id="@+id/textView14"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:background="@drawable/available"
                 android:gravity="center"
                 android:text="V2" />
         </LinearLayout>
@@ -89,6 +91,7 @@
                 android:id="@+id/textView16"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:background="@drawable/available"
                 android:gravity="center"
                 android:text="V3" />
         </LinearLayout>
@@ -103,6 +106,7 @@
                 android:id="@+id/textView17"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:background="@drawable/available"
                 android:gravity="center"
                 android:text="V4" />
         </LinearLayout>
@@ -117,6 +121,7 @@
                 android:id="@+id/textView18"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:background="@drawable/available"
                 android:gravity="center"
                 android:text="V5" />
         </LinearLayout>
@@ -142,6 +147,7 @@
                     android:id="@+id/textView20"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:background="@drawable/available"
                     android:gravity="center"
                     android:text="P1" />
             </LinearLayout>
@@ -156,6 +162,7 @@
                     android:id="@+id/textView21"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:background="@drawable/available"
                     android:gravity="center"
                     android:text="P2" />
             </LinearLayout>
@@ -170,6 +177,7 @@
                     android:id="@+id/textView22"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:background="@drawable/available"
                     android:gravity="center"
                     android:text="P3" />
             </LinearLayout>
@@ -184,6 +192,7 @@
                     android:id="@+id/textView23"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:background="@drawable/available"
                     android:gravity="center"
                     android:text="P4" />
             </LinearLayout>
@@ -198,6 +207,7 @@
                     android:id="@+id/textView24"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:background="@drawable/available"
                     android:gravity="center"
                     android:text="P5" />
             </LinearLayout>
@@ -224,6 +234,7 @@
                     android:id="@+id/textView25"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:background="@drawable/available"
                     android:gravity="center"
                     android:text="C1" />
             </LinearLayout>
@@ -238,6 +249,7 @@
                     android:id="@+id/textView27"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:background="@drawable/available"
                     android:gravity="center"
                     android:text="C2" />
             </LinearLayout>
@@ -252,6 +264,7 @@
                     android:id="@+id/textView26"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:background="@drawable/available"
                     android:gravity="center"
                     android:text="C3" />
             </LinearLayout>
@@ -266,6 +279,7 @@
                     android:id="@+id/textView28"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:background="@drawable/available"
                     android:gravity="center"
                     android:text="C4" />
             </LinearLayout>
@@ -280,6 +294,7 @@
                     android:id="@+id/textView29"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:background="@drawable/available"
                     android:gravity="center"
                     android:text="C5" />
             </LinearLayout>
@@ -303,6 +318,7 @@
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginLeft="5dp"
+            android:background="@drawable/sold"
             android:orientation="horizontal"></LinearLayout>
 
         <TextView
@@ -316,6 +332,7 @@
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginLeft="10dp"
+            android:background="@drawable/available"
             android:orientation="horizontal"></LinearLayout>
 
         <TextView
@@ -329,6 +346,7 @@
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginLeft="10dp"
+            android:background="@drawable/selected"
             android:orientation="horizontal"></LinearLayout>
 
         <TextView
