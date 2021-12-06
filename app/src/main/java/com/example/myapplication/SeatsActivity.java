@@ -23,7 +23,6 @@ public class SeatsActivity extends AppCompatActivity {
         title=getIntent().getStringExtra("title");
         date=getIntent().getStringExtra("date");
         time=getIntent().getStringExtra("time");
-
         /*movie_title=findViewById(R.id.);
         theatre_name=findViewById(R.id.);
         date1=findViewById(R.id.);
