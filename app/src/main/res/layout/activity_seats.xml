@@ -10,6 +10,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/primary"
         android:orientation="vertical">
 
         <TextView
@@ -17,14 +18,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="8dp"
-            android:text="Movie Name" />
+            android:text="Movie Name"
+            android:textColor="#FFFFFF" />
 
         <TextView
             android:id="@+id/textView7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="8dp"
-            android:text="Theater" />
+            android:text="Theater"
+            android:textColor="#FFFFFF" />
     </LinearLayout>
 
     <LinearLayout
@@ -46,6 +49,14 @@
             android:padding="8dp"
             android:text="time" />
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:text="VIP - 300 Rs."
+        android:textStyle="bold" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -131,6 +142,14 @@
                 android:text="V5" />
         </LinearLayout>
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView19"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:text="PREMIUM - 200 Rs."
+        android:textStyle="bold" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -223,6 +242,14 @@
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView30"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:text="CLASSIC - 160 Rs."
+        android:textStyle="bold" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -320,7 +347,7 @@
         android:layout_width="match_parent"
         android:layout_height="20dp"
         android:layout_margin="20dp"
-        android:background="#2196F3"
+        android:background="#BEDFFA"
         android:orientation="horizontal"></LinearLayout>
 
     <LinearLayout
