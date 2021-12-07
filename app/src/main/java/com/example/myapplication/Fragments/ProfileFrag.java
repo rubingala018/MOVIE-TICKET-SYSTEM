@@ -54,8 +54,8 @@ public class ProfileFrag extends Fragment {
         database.getReference("User").child(auth.getCurrentUser().getUid()).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                name = "" + snapshot.child("username");
-                email = "" + snapshot.child("email");
+                name = "" + snapshot.child("username").getValue();
+                email = "" + snapshot.child("email").getValue();
                 binding.name.setText(name);
                 binding.email1.setText(email);
                 binding.username1.setText("hi" + name);
