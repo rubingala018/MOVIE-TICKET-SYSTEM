@@ -168,7 +168,8 @@ public class SeatsActivity extends AppCompatActivity {
                 intent.putExtra("title",title);
                 intent.putExtra("date",date);
                 intent.putExtra("time",time);
-                intent.putExtra("theatre",theatrename);
+                intent.putExtra("Theatre",theatrename);
+                intent.putExtra("money",money);
                 startActivity(intent);
                 HashMap<String,Object> hashMap=new HashMap();
                 hashMap.put("Tickeid",cur_time);

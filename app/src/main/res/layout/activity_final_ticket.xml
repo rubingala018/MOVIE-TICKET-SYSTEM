@@ -18,7 +18,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/textView6"
+            android:id="@+id/ticket_id"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -38,6 +38,7 @@
                 android:text="Movie Name :" />
 
             <TextView
+                android:id="@+id/name_movie"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="15dp"
@@ -57,6 +58,7 @@
                 android:text="Date of Name :" />
 
             <TextView
+                android:id="@+id/tick_date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="15dp"
@@ -76,6 +78,7 @@
                 android:text="Time of Name :" />
 
             <TextView
+                android:id="@+id/tick_time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="15dp"
@@ -95,11 +98,32 @@
                 android:text="Theater" />
 
             <TextView
+                android:id="@+id/tick_theatre"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="15dp"
                 android:layout_marginLeft="10dp"
                 android:text="Theater Location" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:text="Price" />
+
+            <TextView
+                android:id="@+id/tick_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:layout_marginLeft="10dp"
+                android:text="money" />
         </LinearLayout>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
