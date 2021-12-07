@@ -1,6 +1,7 @@
 package com.example.myapplication.Fragments;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -14,6 +15,7 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.example.myapplication.PurchaseHistoryActivity;
 import com.example.myapplication.R;
 import com.example.myapplication.databinding.ActivityPurchasehistoryBinding;
 import com.example.myapplication.databinding.FragmentBlankBinding;
@@ -27,26 +29,22 @@ import com.google.firebase.database.ValueEventListener;
 public class ProfileFrag extends Fragment {
     FirebaseDatabase database;
     FirebaseAuth auth;
-
+    Context context;
     FragmentBlankBinding binding;
-
-
-
-
+    String name,email;
 
     public ProfileFrag() {
         // Required empty public constructor
     }
 
 
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        database=FirebaseDatabase.getInstance();
-        auth=FirebaseAuth.getInstance();
-        binding=FragmentBlankBinding.inflate(inflater,container,false);
+        database = FirebaseDatabase.getInstance();
+        auth = FirebaseAuth.getInstance();
+        binding = FragmentBlankBinding.inflate(inflater, container, false);
         binding.logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -56,11 +54,11 @@ public class ProfileFrag extends Fragment {
         database.getReference("User").child(auth.getCurrentUser().getUid()).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                String name=""+snapshot.child("username");
-                        String email=""+snapshot.child("email");
-                        binding.name.setText(name);
-                        binding.email1.setText(email);
-                        binding.username1.setText("hi"+name);
+                name = "" + snapshot.child("username");
+                email = "" + snapshot.child("email");
+                binding.name.setText(name);
+                binding.email1.setText(email);
+                binding.username1.setText("hi" + name);
 
             }
 
@@ -72,7 +70,9 @@ public class ProfileFrag extends Fragment {
         binding.buy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(getContext(),Purc)
+                Intent intent = new Intent(context, PurchaseHistoryActivity.class);
+                intent.putExtra("username", name);
+                startActivity(intent);
             }
         });
 

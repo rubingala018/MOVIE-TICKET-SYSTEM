@@ -141,7 +141,6 @@ public class SeatsActivity extends AppCompatActivity {
         sc3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                money=money+160;
                 checkSelection(sc3);
             }
         });
@@ -149,7 +148,6 @@ public class SeatsActivity extends AppCompatActivity {
         sc4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                money=money+160;
                 checkSelection(sc4);
             }
         });
@@ -157,8 +155,14 @@ public class SeatsActivity extends AppCompatActivity {
         sc5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                money=money+160;
                 checkSelection(sc5);
+            }
+        });
+
+        pay_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
             }
         });
     }

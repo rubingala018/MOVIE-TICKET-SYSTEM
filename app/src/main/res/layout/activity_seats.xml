@@ -30,7 +30,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            android:layout_marginBottom="2dp"
+            android:layout_marginBottom="5dp"
             android:text="Theatre"
             android:textColor="#FFFFFF"
             android:textSize="12sp" />
@@ -61,7 +61,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
-        android:text="VIP - 300 Rs."
+        android:text="Ticket Price - 200 Rs."
         android:textStyle="bold" />
 
     <LinearLayout
@@ -150,14 +150,6 @@
                 android:text="V5" />
         </LinearLayout>
     </LinearLayout>
-
-    <TextView
-        android:id="@+id/textView19"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:text="PREMIUM - 200 Rs."
-        android:textStyle="bold" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -250,14 +242,6 @@
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
-
-    <TextView
-        android:id="@+id/textView30"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:text="CLASSIC - 160 Rs."
-        android:textStyle="bold" />
 
     <LinearLayout
         android:layout_width="match_parent"
