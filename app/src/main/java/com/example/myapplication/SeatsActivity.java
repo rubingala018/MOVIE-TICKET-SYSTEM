@@ -2,6 +2,7 @@ package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -9,14 +10,21 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.HashMap;
+
 public class SeatsActivity extends AppCompatActivity {
 
     TextView movie_title, theatre_name, date1, time1,
             sc1, sc2, sc3, sc4, sc5, sp1, sp2, sp3, sp4, sp5, sv1, sv2, sv3, sv4, sv5;
-    String title, date, time;
+    String title, date, time,theatrename;
     Button pay_btn;
     LinearLayout vip_seats;
     int money=0;
+    FirebaseDatabase database;
+    FirebaseAuth auth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,9 +32,13 @@ public class SeatsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_seats);
         getSupportActionBar().hide();
 
+        database=FirebaseDatabase.getInstance();
+        auth=FirebaseAuth.getInstance();
+
         title = getIntent().getStringExtra("title");
         date = getIntent().getStringExtra("date");
         time = getIntent().getStringExtra("time");
+        theatrename = getIntent().getStringExtra("Theatre");
         movie_title = findViewById(R.id.movie_name);
         theatre_name = findViewById(R.id.theatre);
         date1 = findViewById(R.id.date_1);
@@ -53,49 +65,42 @@ public class SeatsActivity extends AppCompatActivity {
         sv1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                money=money+300;
                 checkSelection(sv1);
             }
         });
         sv2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                money=money+300;
                 checkSelection(sv2);
             }
         });
         sv3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                money=money+300;
                 checkSelection(sv3);
             }
         });
         sv4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                money=money+300;
                 checkSelection(sv4);
             }
         });
         sv5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                money=money+300;
                 checkSelection(sv5);
             }
         });
         sp1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                money=money+200;
                 checkSelection(sp1);
             }
         });
         sp2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                money=money+200;
                 checkSelection(sp2);
             }
         });
@@ -103,7 +108,6 @@ public class SeatsActivity extends AppCompatActivity {
         sp3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                money=money+200;
                 checkSelection(sp3);
             }
         });
@@ -111,7 +115,6 @@ public class SeatsActivity extends AppCompatActivity {
         sp4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                money=money+200;
                 checkSelection(sp4);
             }
         });
@@ -119,7 +122,6 @@ public class SeatsActivity extends AppCompatActivity {
         sp5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                money=money+200;
                 checkSelection(sp5);
             }
         });
@@ -127,14 +129,12 @@ public class SeatsActivity extends AppCompatActivity {
         sc1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                money=money+160;
                 checkSelection(sc1);
             }
         });
         sc2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                money=money+160;
                 checkSelection(sc2);
             }
         });
@@ -162,7 +162,22 @@ public class SeatsActivity extends AppCompatActivity {
         pay_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent intent=new Intent(SeatsActivity.this,FinalTicketActivity.class);
+                String cur_time= String.valueOf(System.currentTimeMillis());
+                intent.putExtra("TicketId",cur_time);
+                intent.putExtra("title",title);
+                intent.putExtra("date",date);
+                intent.putExtra("time",time);
+                intent.putExtra("theatre",theatrename);
+                startActivity(intent);
+                HashMap<String,Object> hashMap=new HashMap();
+                hashMap.put("Tickeid",cur_time);
+                hashMap.put("title",title);
+                hashMap.put("date",date);
+                hashMap.put("time",time);
+                hashMap.put("theatre",theatrename);
+                hashMap.put("price",money);
+                database.getReference("User").child(auth.getCurrentUser().getUid()).child(cur_time).updateChildren(hashMap);
             }
         });
     }
@@ -171,9 +186,11 @@ public class SeatsActivity extends AppCompatActivity {
         if (v1.getBackground().getConstantState()==getResources().getDrawable(R.drawable.available).getConstantState()) {
             v1.setBackgroundResource(R.drawable.selected);
             v1.setTextColor(Color.WHITE);
+            money=money+200;
         } else if (v1.getBackground().getConstantState()==getResources().getDrawable(R.drawable.selected).getConstantState()) {
             v1.setBackgroundResource(R.drawable.available);
             v1.setTextColor(Color.GRAY);
+            money=money-200;
         }
         pay_btn.setText("PAY "+ money);
     }
