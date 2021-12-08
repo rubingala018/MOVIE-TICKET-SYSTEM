@@ -17,6 +17,7 @@ import android.widget.TextView;
 
 import com.example.myapplication.PurchaseHistoryActivity;
 import com.example.myapplication.R;
+import com.example.myapplication.RegisterActivity;
 import com.example.myapplication.databinding.ActivityPurchasehistoryBinding;
 import com.example.myapplication.databinding.FragmentBlankBinding;
 import com.google.firebase.auth.FirebaseAuth;
@@ -49,6 +50,7 @@ public class ProfileFrag extends Fragment {
             @Override
             public void onClick(View v) {
                 auth.signOut();
+                startActivity(new Intent(getContext(), RegisterActivity.class));
             }
         });
         database.getReference("User").child(auth.getCurrentUser().getUid()).addValueEventListener(new ValueEventListener() {
@@ -58,7 +60,7 @@ public class ProfileFrag extends Fragment {
                 email = "" + snapshot.child("email").getValue();
                 binding.name.setText(name);
                 binding.email1.setText(email);
-                binding.username1.setText("hi" + name);
+                binding.username1.setText("Hi " + name+ "!!");
 
             }
 

@@ -13,7 +13,9 @@ import android.widget.TextView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 public class SeatsActivity extends AppCompatActivity {
 
@@ -25,6 +27,7 @@ public class SeatsActivity extends AppCompatActivity {
     int money=0;
     FirebaseDatabase database;
     FirebaseAuth auth;
+    List<String> list;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +37,7 @@ public class SeatsActivity extends AppCompatActivity {
 
         database=FirebaseDatabase.getInstance();
         auth=FirebaseAuth.getInstance();
+        list=new ArrayList<>();
 
         title = getIntent().getStringExtra("title");
         date = getIntent().getStringExtra("date");
@@ -45,6 +49,11 @@ public class SeatsActivity extends AppCompatActivity {
         time1 = findViewById(R.id.time_1);
         pay_btn = findViewById(R.id.pay);
         vip_seats = findViewById(R.id.vip);
+
+        date1.setText(date);
+        time1.setText(time);
+        theatre_name.setText(theatrename);
+        movie_title.setText(title);
 
         sc1 = findViewById(R.id.c1);
         sc2 = findViewById(R.id.c2);
@@ -169,7 +178,8 @@ public class SeatsActivity extends AppCompatActivity {
                 intent.putExtra("date",date);
                 intent.putExtra("time",time);
                 intent.putExtra("Theatre",theatrename);
-                intent.putExtra("money",money);
+                intent.putExtra("money",String.valueOf(money));
+                intent.putExtra("seats", String.valueOf(list));
                 startActivity(intent);
                 HashMap<String,Object> hashMap=new HashMap();
                 hashMap.put("Tickeid",cur_time);
@@ -178,6 +188,7 @@ public class SeatsActivity extends AppCompatActivity {
                 hashMap.put("time",time);
                 hashMap.put("theatre",theatrename);
                 hashMap.put("price",money);
+                hashMap.put("seats",list);
                 database.getReference("User").child(auth.getCurrentUser().getUid()).child(cur_time).updateChildren(hashMap);
             }
         });
@@ -188,10 +199,12 @@ public class SeatsActivity extends AppCompatActivity {
             v1.setBackgroundResource(R.drawable.selected);
             v1.setTextColor(Color.WHITE);
             money=money+200;
+            list.add(v1.getText().toString());
         } else if (v1.getBackground().getConstantState()==getResources().getDrawable(R.drawable.selected).getConstantState()) {
             v1.setBackgroundResource(R.drawable.available);
             v1.setTextColor(Color.GRAY);
             money=money-200;
+            list.remove(v1.getText().toString());
         }
         pay_btn.setText("PAY "+ money);
     }

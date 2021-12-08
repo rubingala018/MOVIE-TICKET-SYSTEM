@@ -89,6 +89,8 @@ public class BookSeatsActivity extends AppCompatActivity {
         date6.setText(strDays[c5.getTime().getDay()]+"\n"+dateFormat.format(c5.getTime()));
         date7.setText(strDays[c6.getTime().getDay()]+"\n"+dateFormat.format(c6.getTime()));
 
+        fdate=date1.getText().toString();
+
         date1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
